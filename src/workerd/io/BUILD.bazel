@@ -89,6 +89,7 @@ wd_cc_library(
         ":observer",
         ":supported-compatibility-date",
         ":trace",
+        ":wasm-instantiate-shim",
         ":worker-interface",
         ":worker-source",
         "//src/rust/cxx-integration",
@@ -343,6 +344,12 @@ wd_cc_embed(
     name = "supported-compatibility-date",
     src = ":trimmed-supported-compatibility-date.txt",
     base_name = "supported-compatibility-date",
+)
+
+wd_cc_embed(
+    name = "wasm-instantiate-shim",
+    src = "wasm-instantiate-shim.js",
+    base_name = "wasm-instantiate-shim",
 )
 
 wd_capnp_library(src = "cdp.capnp")
